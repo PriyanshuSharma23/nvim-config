@@ -34,3 +34,10 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- lazy git
 vim.keymap.set('n', '<leader>gg', '<cmd>LazyGit<cr>', { desc = 'LazyGit' })
+
+-- bufferline remaps
+vim.keymap.set('n', '<leader>bl', '<cmd>BufferLineCloseLeft<CR>')
+vim.keymap.set('n', '<leader>br', '<cmd>BufferLineCloseRight<CR>')
+vim.keymap.set('n', '<leader>bo', '<cmd>BufferLineCloseOthers<CR>')
+vim.keymap.set('n', '<S-h>', '<cmd>BufferLineCyclePrev<CR>')
+vim.keymap.set('n', '<S-l>', '<cmd>BufferLineCycleNext<CR>')
