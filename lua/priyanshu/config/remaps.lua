@@ -10,4 +10,8 @@ Map({ "n", "v" }, "<leader>y", [["+y]])
 Map("n", "<leader>Y", [["+Y]])
 Map({ "n", "v" }, "<leader>d", [["_d]])
 
-
+-- window navigation controls
+Map({'n'}, '<c-h>', '<c-w><c-h>')
+Map({'n'}, '<c-j>', '<c-w><c-j>')
+Map({'n'}, '<c-k>', '<c-w><c-k>')
+Map({'n'}, '<c-l>', '<c-w><c-l>')
