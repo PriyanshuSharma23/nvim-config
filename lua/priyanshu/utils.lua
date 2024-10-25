@@ -1,19 +1,18 @@
 function Map(mode, lhs, rhs, opts)
-
-    local options = { noremap = true, silent = true }
-    if opts then
-        options = vim.tbl_extend("force", options, opts)
-    end
-    vim.keymap.set(mode, lhs, rhs, options)
+  local options = { noremap = true, silent = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.keymap.set(mode, lhs, rhs, options)
 end
 
-LoadModules = function (modules)
-    for _, module in ipairs(modules) do
-        local ok, err = pcall(require, 'priyanshu.config.' .. module)
-        if not ok then
-            error('Error loading ' .. module .. '\n\n' .. err)
-        end
+LoadModules = function(modules)
+  for _, module in ipairs(modules) do
+    local ok, err = pcall(require, "priyanshu.config." .. module)
+    if not ok then
+      error("Error loading " .. module .. "\n\n" .. err)
     end
+  end
 end
 
 ---@param buf number?
@@ -58,4 +57,3 @@ function Bufremove(buf)
     pcall(vim.cmd, "bdelete! " .. buf)
   end
 end
-
