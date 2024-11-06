@@ -34,17 +34,17 @@ return {
                 callback = function(event)
                     local opts = { buffer = event.buf }
 
-                    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-                    vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-                    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-                    vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-                    vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-                    vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-                    vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-                    vim.keymap.set('n', '<leader>cr', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+                    Map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+                    Map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+                    Map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+                    Map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+                    Map('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+                    Map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+                    Map('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+                    Map('n', '<leader>cr', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
                     -- vim.keymap.set({ 'n', 'x' }, '<leader>cf', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-                    vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-                    vim.keymap.set('n', '<leader>cd', '<cmd>lua vim.lsp.diagnostic.get_line_diagnostics<cr>', opts)
+                    Map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+                    Map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
                 end,
             })
         end
