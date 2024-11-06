@@ -22,3 +22,6 @@ Map("t", "<C-h>", "<cmd>wincmd h<CR>")
 Map("t", "<C-j>", "<cmd>wincmd j<CR>")
 Map("t", "<C-k>", "<cmd>wincmd k<CR>")
 Map("t", "<C-l>", "<cmd>wincmd l<CR>")
+
+Map('n', ':', 'q:i', { noremap = true, silent = true })
+
