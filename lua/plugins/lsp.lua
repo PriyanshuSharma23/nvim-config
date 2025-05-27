@@ -33,6 +33,7 @@ return {
     dependencies = { 'saghen/blink.cmp' },
     config = function()
       local capabilities = require('blink.cmp').get_lsp_capabilities()
+      local util = require 'lspconfig.util'
 
       require('lspconfig')['lua_ls'].setup {
         capabilities = capabilities,
@@ -52,6 +53,26 @@ return {
 
       require('lspconfig')['gopls'].setup {
         capabilities = capabilities,
+        file_types = { 'go', 'gomod', 'gowork', 'gotmpl' },
+        root_dir = util.root_pattern('go.work', 'go.mod', '.git'),
+        settings = {
+          gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses = {
+              unusedparams = true,
+              unusedwrite = true,
+              unreachable = true,
+              nilness = true,
+              shadow = true,
+              buildtag = true,
+              nilcheck = true,
+              printf = true,
+              export = true,
+            },
+            staticcheck = true,
+          },
+        },
       }
 
       --  This function gets run when an LSP attaches to a particular buffer.
