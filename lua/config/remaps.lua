@@ -15,3 +15,6 @@ vim.keymap.set('n', '<leader>tt', function()
   vim.cmd.terminal()
   vim.cmd.start()
 end)
+
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
